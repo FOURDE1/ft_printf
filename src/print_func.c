@@ -6,18 +6,20 @@
 /*   By: hraad <hraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 00:48:32 by hraad             #+#    #+#             */
-/*   Updated: 2024/08/29 02:42:39 by hraad            ###   ########.fr       */
+/*   Updated: 2024/08/30 00:34:31 by hraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils/libft.h"
+#include "../utils/libft.h"
+#include "ft_printf.h"
+#include <stdlib.h>
 
 int	print_string(char *str)
 {
 	size_t	count;
 
 	count = ft_strlen(str);
-	ft_putstr(str);
+	ft_putstr_fd(str, 1);
 	return (count);
 }
 
@@ -50,16 +52,13 @@ int	put_int(int num)
 
 int	print_percent(void)
 {
-	char	c;
-
-	c = 'n';
 	ft_putchar_fd('%', 1);
 	return (1);
 }
 
 int	put_unsigned(unsigned int n)
 {
-	int	cout;
+	int	count;
 
 	count = 0;
 	if (n > 9)

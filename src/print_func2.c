@@ -6,11 +6,11 @@
 /*   By: hraad <hraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 02:44:50 by hraad             #+#    #+#             */
-/*   Updated: 2024/08/29 03:53:29 by hraad            ###   ########.fr       */
+/*   Updated: 2024/08/30 00:34:44 by hraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils/libft.h"
+#include "../utils/libft.h"
 
 int	put_hexa(unsigned int num, char format)
 {
@@ -32,7 +32,8 @@ int	put_hexa(unsigned int num, char format)
 
 int	put_pointer(void *ptr)
 {
-	int	sum;
+	int				sum;
+	unsigned long	address;
 
 	if (!ptr)
 	{
@@ -42,6 +43,6 @@ int	put_pointer(void *ptr)
 	sum = 2;
 	ft_putstr_fd("0x", 1);
 	address = (unsigned long)ptr;
-	count += put_hexa(address, 'x');
-	return (count);
+	sum += put_hexa(address, 'x');
+	return (sum);
 }
