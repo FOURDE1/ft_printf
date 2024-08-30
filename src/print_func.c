@@ -6,7 +6,7 @@
 /*   By: hraad <hraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 00:48:32 by hraad             #+#    #+#             */
-/*   Updated: 2024/08/30 00:34:31 by hraad            ###   ########.fr       */
+/*   Updated: 2024/08/30 01:13:54 by hraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	print_string(char *str)
 {
 	size_t	count;
 
+	if (!str)
+		str = "(null)";
 	count = ft_strlen(str);
 	ft_putstr_fd(str, 1);
 	return (count);

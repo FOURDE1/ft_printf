@@ -6,7 +6,7 @@
 /*   By: hraad <hraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 02:44:50 by hraad             #+#    #+#             */
-/*   Updated: 2024/08/30 00:34:44 by hraad            ###   ########.fr       */
+/*   Updated: 2024/08/30 03:22:38 by hraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	put_hexa(unsigned int num, char format)
 
 int	put_pointer(void *ptr)
 {
-	int				sum;
-	unsigned long	address;
+	int			sum;
+	uintptr_t	address;
 
 	if (!ptr)
 	{
@@ -42,7 +42,8 @@ int	put_pointer(void *ptr)
 	}
 	sum = 2;
 	ft_putstr_fd("0x", 1);
-	address = (unsigned long)ptr;
-	sum += put_hexa(address, 'x');
+	address = (uintptr_t)ptr;
+	sum += put_hexa((unsigned int)(address >> 32), 'x');
+	sum += put_hexa((unsigned int)address, 'x');
 	return (sum);
 }
