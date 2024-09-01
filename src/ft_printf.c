@@ -6,7 +6,7 @@
 /*   By: hraad <hraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:59:15 by hraad             #+#    #+#             */
-/*   Updated: 2024/08/29 23:55:19 by hraad            ###   ########.fr       */
+/*   Updated: 2024/09/01 23:17:55 by hraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static	int	eprintf(char format, va_list args)
 	else if (format == 'u')
 		count += put_unsigned(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')
-		count += put_hexa(va_arg(args, unsigned int), format);
+		count += put_hexa(va_arg(args, unsigned long), format);
 	else if (format == 'p')
 		count += put_pointer(va_arg(args, void *));
 	else if (format == '%')
